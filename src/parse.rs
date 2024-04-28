@@ -3,7 +3,6 @@
 // FIXME: consider parsing out array index syntax? (e.g. ${array[some index]}
 // FIXME: arithmetic substitutions don't currently support param/comand substitutions
 
-use std::convert::From;
 use std::error::Error;
 use std::fmt;
 use std::iter::empty as empty_iter;
@@ -2060,13 +2059,13 @@ impl<I: Iterator<Item = Token>, B: Builder> Parser<I, B> {
 
         macro_rules! missing_in {
             () => {
-                |_| ParseError::IncompleteCmd(CASE, start_pos, IN, self.iter.pos());
+                |_| ParseError::IncompleteCmd(CASE, start_pos, IN, self.iter.pos())
             };
         }
 
         macro_rules! missing_esac {
             () => {
-                |_| ParseError::IncompleteCmd(CASE, start_pos, ESAC, self.iter.pos());
+                |_| ParseError::IncompleteCmd(CASE, start_pos, ESAC, self.iter.pos())
             };
         }
 

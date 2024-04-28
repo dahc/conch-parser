@@ -1,10 +1,6 @@
 use crate::ast::builder::*;
 use crate::ast::*;
-use std::default::Default;
-use std::fmt;
 use std::marker::PhantomData;
-use std::rc::Rc;
-use std::sync::Arc;
 use void::Void;
 
 /// A macro for defining a default builder, its boilerplate, and delegating
